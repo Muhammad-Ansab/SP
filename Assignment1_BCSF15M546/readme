@@ -1,0 +1,54 @@
+Assignment 1 
+Submitted to Sir Abrar Shah
+
+QUESTION 1
+(25 Marks)
+
+Suppose I have some files of different extensions(txt,doc,csv,mp3.mp4) in my folder, the script will
+create exactly one folder for each file extension type and then move all the file of same extension in
+that folder. For example I have files like
+123.txt
+1236.doc
+19as.mp3
+Asd.mp4
+Lol.mp4
+After running your script we have 4 different folders of extension name and each folder contain files
+of same extension
+Txt = 123.txt
+Doc = 1236.doc
+Mp3 = 19as.mp3
+Mp4 = Asd.mp4, lol.mp4
+
+
+
+
+
+
+QUESTION 2
+(25 Marks)
+
+Write a shell script that, given a file name as the argument will write the even numbered line to a file
+with name evenfile and odd numbered lines in a text file called oddfile
+
+
+
+
+QUESTION 3:
+(25 Marks)
+
+Write the definitions of the following functions
+
+
+
+Is_lower() Purpose: Converts a string to lower case
+Is_root() Purpose: Return true if script is executed by the root user
+Is_user_exists() Purpose: Return true $user exits in /etc/passwd
+
+
+
+
+QUESTION 4
+(25 Marks)
+
+write a shell script that will take an input file and remove identical lines (or duplicate lines from the
+file)
