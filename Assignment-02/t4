@@ -1,0 +1,42 @@
+import sys
+import psutil 
+import datetime
+
+if len(sys.argv) == 1 :
+	print ("No arguments passed")
+else :
+	for i in range(1,len(sys.argv)):
+		if(sys.argv[i].isdigit()):
+			inpid=int(sys.argv[i])
+			if(psutil.pid_exists(inpid)):
+				p=psutil.Process(inpid)
+				Ppid=str(p.pid)
+				print("PID : "+Ppid)
+				PName=str(p.name())
+				print("Name : "+PName)
+				PStatus=str(p.status())
+				print("Status : "+PStatus)
+				PPpid=str(p.ppid())
+				print("PPID : "+PPpid)
+				par=psutil.Process(p.ppid())
+				PPName=str(par.name())
+				print("Parent Name : "+PPName)
+				t_obj = datetime.datetime.fromtimestamp(p.create_time()).strftime("%Y-%m-%d %H:%M:%S")
+				print("Creation Time : "+t_obj)
+				x=str(p.open_files())
+				y=x[1:(len(x)-2)]
+				list_file=(y.split("popenfile"))
+				print("Files opened: ")
+				if(p.num_fds()==0):
+					print("\n".join(list_file))
+				else:
+					print("No opened files")
+				PM=str(p.memory_full_info())
+				pm=PM[9:(len(PM)-1)]
+				PMemory=pm.split(",")
+				print("Memory :")
+				print("\n".join(PMemory))
+			else:
+				print("Process does't exist")
+		else:
+			print("Invalid PID")
